@@ -1,6 +1,6 @@
 <template>
 <div class="view-todo">
-    <h2>todo</h2>
+    <h2>items</h2>
     <ul>
         <li v-for="todo in allTodos" :key="todo._id" :todo="todo">
             <div><b>{{ todo.name }}</b></div>
