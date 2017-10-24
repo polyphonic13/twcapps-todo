@@ -2,10 +2,12 @@ import axios from "axios";
 import { FETCH_LABELS, GET_LABELS, SET_LABELS } from "../types";
 import { API_URL, LABELS_PATH } from "../constants";
 
+import Label from "../../models/label";
+
 const url = API_URL + LABELS_PATH;
 
 const state = {
-    labels: []
+    labels: new Array<Label>()
 };
 
 const getters = {
@@ -20,10 +22,17 @@ const mutations = {
 
 const actions = {
     [FETCH_LABELS]({ commit }) {
-        return axios.get(url)
-            .then((response) =>
-            commit(SET_LABELS, response.data)
-        );
+        return new Promise((resolve) => {
+            axios.get(url)
+                .then((response) => {
+                    console.log("axios response = ", response.data);
+                    if (!response.data.success) {
+                        return new Error(response.data.message);
+                    }
+                    commit(SET_LABELS, response.data.data);
+                    resolve();
+                });
+        });
     }
 };
 

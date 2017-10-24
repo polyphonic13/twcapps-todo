@@ -47,4 +47,8 @@ export default class LabelList extends Vue {
   get allLabels(): Label[] {
     return this.$store.getters[types.GET_LABELS];
   }
+
+  getLabelStyle(label: Label): string {
+    return "background: " + label.color;
+  }
 }
