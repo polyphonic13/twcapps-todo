@@ -12,7 +12,7 @@ function getRenderedClassText(Component, propsData, className) {
 
 const TEXT_CONTENT: string = "home items labels";
 
-describe("foot.vue", () => {
+describe("navbar.vue", () => {
     it("should render nav bar links correctly", () => {
         // Vue.use(VueRouter);
         // const router = new VueRouter({
