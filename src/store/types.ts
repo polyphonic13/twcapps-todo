@@ -1,4 +1,4 @@
-export const FETCH_TODOS = "todos/fetchProducts";
+export const FETCH_TODOS = "todos/fetchTodos";
 export const SET_TODOS = "todos/setTodos";
 export const GET_TODOS = "todos/getTodos";
 
