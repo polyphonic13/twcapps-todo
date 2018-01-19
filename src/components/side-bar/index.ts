@@ -7,7 +7,7 @@ let template = require("./navbar.vue");
 @Component({
   mixins: [template],
 })
-export default class NavBar extends Vue {
+export default class SideBar extends Vue {
 
   collapsed: boolean = true;
 
