@@ -25,6 +25,7 @@
     "vue-router": "^2.6.0",
     "vue-ts-locale": "^1.0.1",
     "vue-typed": "git+https://github.com/icfr/vue-typed.git#update_vue",
+    "vuetify": "^0.17.6",
     "vuex": "^2.3.1"
   },
   "devDependencies": {
