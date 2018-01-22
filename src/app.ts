@@ -13,10 +13,12 @@ let Config = require("./config.json");
 
 import store from "./store";
 
-import Navbar from "./components/navbar";
-import Foot from "./components/foot";
+import SideBar from "./components/side-bar";
+import MenuBar from "./components/menu-bar";
 
 import { router } from "./routes";
+
+// import "../node_modules/vuetify/dist/vuetify.min.css";
 
 import "./style.scss";
 let template = require("./App.vue");
@@ -37,14 +39,14 @@ Vue.config.errorHandler = function (err, vm, info) {
     mixins: [template],
     store,
     components: {
-        Navbar,
-        Foot
+        SideBar,
+        MenuBar,
     },
     router: router
 })
 class App extends Vue {
     mounted() {
-        Logger.log("mounted, store = ", store);
+        Logger.log("App/mounted, store = ", store);
     }
 }
 

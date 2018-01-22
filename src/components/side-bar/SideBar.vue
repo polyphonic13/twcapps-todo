@@ -6,7 +6,7 @@
             hide-overlay
             width="250"
             v-model="drawer"
-            :mini-variant.sync="miniDrawer"
+            :mini-variant.sync="collapsed"
         >
              <v-list dense>
                 <v-list-tile>
@@ -47,4 +47,4 @@
 
        </v-navigation-drawer>
 </template>
-<style lang="scss" src="./navbar.scss" scoped></style>
+<style lang="scss" src="./SideBar.scss" scoped></style>
