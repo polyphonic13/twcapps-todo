@@ -2,5 +2,5 @@
  "footer-powered-by": "Vue-Typescript-boilerplate {version}.{build} powered by Vue",
  "hello-essential-links": "Essential Links",
  "hello-ecosystems": "Ecosystem",
- "navbar-title": "twcapps-todo"
+ "sidebar-title": "vue playground"
 }

@@ -24,7 +24,7 @@
                         <v-icon>arrow_drop_down</v-icon>             
                     </v-btn>
                     <v-list>
-                        <v-list-tile v-for="item in adminItems" :key="item.title" @click="">
+                        <v-list-tile v-for="item in adminItems" :key="item.title">
                             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                         </v-list-tile>
                     </v-list>

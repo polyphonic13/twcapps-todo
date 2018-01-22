@@ -5,29 +5,28 @@ import * as Logger from "js-logger";
 let template = require("./navbar.vue");
 
 @Component({
-  mixins: [template],
+    mixins: [template],
 })
 export default class SideBar extends Vue {
 
-  collapsed: boolean = true;
+    collapsed: boolean = true;
 
-  me: "me";
-  isLoggedIn: "loggedIn";
+    me: "me";
+    isLoggedIn: "loggedIn";
 
-  collapse () {
-    this.collapsed = !this.collapsed;
-  }
+    collapse() {
+        this.collapsed = !this.collapsed;
+    }
 
-  onClickLogin () {
-    this.$store.commit("OPEN_DIALOG", "LoginModal", {});
-  }
+    onClickLogin() {
+        this.$store.commit("OPEN_DIALOG", "LoginModal", {});
+    }
 
-  // ...mapActions({
-  //   getAccount: 'getAccount'
-  // })
+    // ...mapActions({
+    //   getAccount: 'getAccount'
+    // })
 
-  created () {
-    // this.isLoggedIn && this.getAccount({id: 'me'})
-    // .catch(() => {});
-  }
+    created() {
+        Logger.info("SideBar/created");
+    }
 }
