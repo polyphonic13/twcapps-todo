@@ -11,6 +11,14 @@
                     </v-btn>
                     <span>Source is here</span>
                 </v-tooltip>
+                <p>here is some content for the site</p>
+                <v-card height="185px" flat color="secondary"> 
+                    <v-card-text>
+                        <div>
+                            <v-btn color="primary" dark>primary</v-btn>
+                        </div>
+                    </v-card-text>
+                </v-card>
                 </v-layout>
             </v-container>
         </v-content>

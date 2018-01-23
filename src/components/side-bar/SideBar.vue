@@ -44,7 +44,5 @@
                     </v-list-tile>
                 </v-list-group>
             </v-list>
-
        </v-navigation-drawer>
 </template>
-<style lang="scss" src="./SideBar.scss" scoped></style>

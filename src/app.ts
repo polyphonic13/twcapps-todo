@@ -7,6 +7,11 @@ import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 import * as Logger from "js-logger";
 
+Vue.use(Vuetify);
+Vue.use(VueRouter);
+
+import "vuetify/dist/vuetify.min.css";
+
 import { mapGetters, mapActions } from "vuex";
 
 let Config = require("./config.json");
@@ -22,9 +27,6 @@ import { router } from "./routes";
 
 import "./style.scss";
 let template = require("./App.vue");
-
-Vue.use(Vuetify);
-Vue.use(VueRouter);
 
 let logLevel = (Config.debug ? Logger.DEBUG : Logger.ERROR);
 
