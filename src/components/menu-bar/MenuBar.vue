@@ -1,6 +1,7 @@
 <template>
         <v-toolbar
             color="blue-grey"
+            dense
             dark
             app
             clipped-left
