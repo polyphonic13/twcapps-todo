@@ -8,7 +8,7 @@
             v-model="drawer"
             :mini-variant.sync="collapsed"
         >
-             <v-list dense>
+             <v-list dense @click="collapse()">
                 <v-list-tile>
                     <v-list-tile-action>
                         <!-- <v-icon>local_shipping</v-icon> -->

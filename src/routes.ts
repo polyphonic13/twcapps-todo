@@ -1,36 +1,53 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-import VueRouter from "vue-router";
-import * as Logger from "js-logger";
-import Home from "./layouts/home";
-import TodoList from "./layouts/todos/";
-import LabelList from "./layouts/labels/";
-import NotFound from "./layouts/not-found";
+import VueRouter, { RouteConfig } from "vue-router";
+import Pages from "./pages";
 
-export const routes = [
-  {
-    path: "/",
-    name: " ",
-    component: Home
-  },
-  {
-    path: "/todos",
-    name: "todos",
-    component: TodoList
-  },
-  {
-    path: "/labels",
-    name: "labels",
-    component: LabelList
-  },
-  {
-    path: "*",
-    component: NotFound
-  }
-];
+const Config: RoutesData = require("./config.json");
+
+class RoutesData {
+    routes: RouteData[];
+}
+class RouteData {
+    name: string;
+    path: string;
+    component: string;
+}
+
+let routes: RouteConfig[] = [];
+
+Config.routes.forEach((route) => {
+    routes.push({
+        path: route.path,
+        name: route.name,
+        component: Pages[route.component]
+    });
+});
+
+// export const routes = [
+//     {
+//         path: "/",
+//         name: " ",
+//         component: Pages.Home
+//     },
+//     {
+//         path: "/sites",
+//         name: "sites",
+//         component: Pages.Sites
+//     },
+//     {
+//         path: "/todos",
+//         name: "todos",
+//         component: Pages.Todos
+//     },
+//     {
+//         path: "*",
+//         component: Pages.NotFound
+//     }
+// ];
 
 export const router = new VueRouter({
-  routes,
-  mode: "history",
-  linkActiveClass: "active"
+    routes,
+    mode: "history",
+    linkActiveClass: "active"
 });

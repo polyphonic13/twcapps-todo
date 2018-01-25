@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import BaseButton from "./index";
 import { expect } from "chai";
-import { routes } from "../../routes";
+// import { routes } from "../../routes";
 
 function getRenderedClassText(Component, propsData, className) {
     const Ctor = Vue.extend(Component);

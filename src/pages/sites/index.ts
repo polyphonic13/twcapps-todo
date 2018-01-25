@@ -2,12 +2,12 @@ import Vue from "vue";
 import { Component, Prop } from "vue-typed";
 import * as Logger from "js-logger";
 
-let template = require("./Home.vue");
+let template = require("./Sites.vue");
 
 @Component({
     mixins: [template],
 })
-export default class Home extends Vue {
+export default class Sites extends Vue {
 
     filterField: string = "Network";
 
