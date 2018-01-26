@@ -4,17 +4,18 @@
             clipped
             app
             hide-overlay
-            width="250"
+            width="225"
+            mini-variant-width="48"
             v-model="drawer"
-            :mini-variant.sync="collapsed"
+            :mini-variant.sync="isSideBarMinimized"
         >
-             <v-list dense @click="collapse()">
+             <v-list>
                 <v-list-tile>
                     <v-list-tile-action>
                         <!-- <v-icon>local_shipping</v-icon> -->
                     </v-list-tile-action>
                     <v-list-tile-content class="title">
-                        Delivery
+                        {{ sideBarTitle }}
                     </v-list-tile-content>
                 </v-list-tile>
                 <v-list-group v-for="item in sideBarItems" :value="item.active" v-bind:key="item.title">

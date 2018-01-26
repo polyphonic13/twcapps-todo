@@ -1,6 +1,10 @@
 import Vue from "vue";
+import { mapGetters } from "vuex";
 import { Component, Prop } from "vue-typed";
 import * as Logger from "js-logger";
+
+import { SET_FLAG, GET_FLAG } from "../../store/Types";
+import { IS_SIDE_BAR_MINIMIZED } from "../../store/Flags";
 
 let template = require("./MenuBar.vue");
 const Config = require("../../config.json");
@@ -14,10 +18,13 @@ class AdminItem {
 
 @Component({
     mixins: [template],
+    computed: {
+        ...mapGetters([
+            GET_FLAG
+        ])
+    }
 })
 export default class MenuBar extends Vue {
-    version: string = `${Config.version}`;
-    build: string = `${Config.build}`;
 
     get routes() {
         return this.$router.currentRoute;
@@ -40,8 +47,16 @@ export default class MenuBar extends Vue {
         };
     }
 
+    toggleSideBarMinimized() {
+        let isSideBarMinimized = this[GET_FLAG](IS_SIDE_BAR_MINIMIZED);
+        this.$store.commit(SET_FLAG, {
+            key: IS_SIDE_BAR_MINIMIZED,
+            value: !isSideBarMinimized
+        });
+    }
+
     getButtonClass(path: string): string {
-        Logger.log("MenuBar/getButtonClass, path = " + path + ", router.path = " + this.$router.currentRoute.path);
+        Logger.log("MenuBar/getButtonClass, path = " + path + ", router.name = " + this.$router.currentRoute.name);
         return (this.$router.currentRoute.path === path) ? "btn--active" : "";
     }
 
@@ -53,6 +68,9 @@ export default class MenuBar extends Vue {
 
     created() {
         Logger.info("MenuBar/created, route = ", this.$router.currentRoute);
+        this.$router.afterEach((to, from) => {
+            Logger.log("MenuBar/router afterEach callback, current = " + this.$router.currentRoute.path);
+        });
     }
 
     beforeRouteUpdate() {

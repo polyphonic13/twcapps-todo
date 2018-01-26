@@ -1,26 +1,27 @@
-export interface RouteConfig {
+export interface IRouteConfig {
     path: string;
     name: string;
     component: string;
 }
 
-export interface Flag {
+export interface IFlag {
     key: string;
     value: boolean;
 }
 
-export interface PageConfig {
+export interface IPageConfig {
     name: string;
     components: Array<any>;
-    flags: Flag[];
+    flags: IFlag[];
 }
 
-export interface SiteConfig {
+export interface ISiteConfig {
     version: string;
     build: string;
     debug: boolean;
-    routes: RouteConfig[];
-    pages: PageConfig[];
+    routes: IRouteConfig[];
+    pages: IPageConfig[];
+    flags: IFlag[];
 }
 
 

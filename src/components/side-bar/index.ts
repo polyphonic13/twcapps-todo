@@ -1,17 +1,39 @@
 import Vue from "vue";
+import { mapGetters } from "vuex";
 import { Component, Prop } from "vue-typed";
 import * as Logger from "js-logger";
 
-import SideBarItem from "../../models/side-bar-item";
+import { SET_FLAG, GET_FLAG } from "../../store/Types";
+import { IS_SIDE_BAR_MINIMIZED } from "../../store/Flags";
+
+import SideBarItem from "../../models/SideBarItem";
 
 let template = require("./SideBar.vue");
 
 @Component({
     mixins: [template],
+    computed: {
+        ...mapGetters([
+            GET_FLAG
+        ])
+    }
 })
 export default class SideBar extends Vue {
 
-    collapsed: boolean = true;
+    get isSideBarMinimized(): boolean {
+        return this[GET_FLAG](IS_SIDE_BAR_MINIMIZED);
+    }
+
+    set isSideBarMinimized(value: boolean) {
+        this.$store.commit(SET_FLAG, {
+            key: IS_SIDE_BAR_MINIMIZED,
+            value: value
+        });
+    }
+
+    get sideBarTitle(): string {
+        return "Inventory";
+    }
 
     get sideBarItems(): SideBarItem[] {
         return [
@@ -46,7 +68,7 @@ export default class SideBar extends Vue {
                 items: [
                     { title: "All Networks", href: "network.html" }
                 ]
-            }
+            },
         ];
     }
 
@@ -57,14 +79,6 @@ export default class SideBar extends Vue {
             drawer: true
 
         };
-    }
-
-
-    collapse() {
-        this.collapsed = !this.collapsed;
-    }
-
-    onClickLogin() {
     }
 
     // ...mapActions({

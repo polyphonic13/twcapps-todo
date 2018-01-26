@@ -2,12 +2,12 @@ import Vue from "vue";
 import { mapGetters, mapActions } from "vuex";
 import { Component, Prop } from "vue-typed";
 
-import * as types from "../../store/types";
-import * as filterTypes from "../../store/modules/todo-filters";
+import * as types from "../../store/Types";
+import * as filterTypes from "../../store/modules/todos-store/TodoFilters";
 
 import * as Logger from "js-logger";
 
-import Todo from "../../models/todo";
+import Todo from "../../models/Todo";
 
 const template = require("./Todos.vue");
 

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { FETCH_TODOS, GET_TODOS, SET_TODOS } from "../../types";
-import { API_URL, TODOS_PATH } from "../../constants";
+import { FETCH_TODOS, GET_TODOS, SET_TODOS } from "../../Types";
+import { API_URL, TODOS_PATH } from "../../Constants";
 
 const url = API_URL + TODOS_PATH;
 

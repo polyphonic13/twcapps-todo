@@ -9,9 +9,19 @@
     -ms-user-select: none; /* IE10+ */
 }
 
-.toolbar--dense{
+.toolbar--dense {
     .input-group.input-group--solo{
         min-height: 35px;
         height: 35px;
     }
 }
+
+div.list__tile {
+    padding: 0 12px !important;
+}
+
+.navigation-drawer--mini-variant ul li div.list__tile {
+    padding: 0 !important;
+}
+
+

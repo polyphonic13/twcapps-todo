@@ -7,7 +7,7 @@
             clipped-left
             fixed
         >
-            <v-toolbar-side-icon @click.stop="isMinimized = !isMinimized"></v-toolbar-side-icon>
+            <v-toolbar-side-icon @click="toggleSideBarMinimized()"></v-toolbar-side-icon>
             <v-toolbar-title class="pr-2">
                 Polaris
             </v-toolbar-title>

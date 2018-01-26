@@ -1,10 +1,10 @@
 import { getters } from "./getters";
 import { mutations } from "./mutations";
 
-import { SiteConfig } from "../../../models/site-config";
+import { ISiteConfig } from "../../../interfaces/ISiteConfig";
 
 const data = require("../../../config.json");
-const config: SiteConfig = data as SiteConfig;
+const config: ISiteConfig = data as ISiteConfig;
 
 const state = {
     config: config

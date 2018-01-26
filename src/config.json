@@ -2,8 +2,7 @@
     "version": "1.0.0",
     "build": "1",
     "debug": true,
-    "routes": [
-        {
+    "routes": [{
             "path": "/",
             "name": "Delivery",
             "component": "Home"
@@ -23,5 +22,49 @@
             "name": "Admin",
             "component": "Admin"
         }
-    ]
+    ],
+    "flags": {
+        "isSideBarMinimized": true
+    },
+    "sideBarItems": [
+    {
+        "route": "Sites",
+        "items": [{
+                "action": "web",
+                "title": "Sites",
+                "href": "sites.html",
+                "items": [{
+                    "title": "All Sites",
+                    "href": "sites.html"
+                }]
+            },
+            {
+                "action": "view_quilt",
+                "title": "Slot Sets",
+                "href": "slot_sets.html",
+                "items": [{
+                    "title": "All Slot Sets",
+                    "href": "slot_sets.html"
+                }]
+            },
+            {
+                "action": "picture_in_picture_alt",
+                "title": "Slots",
+                "href": "slots.html",
+                "items": [{
+                    "title": "All Slots",
+                    "href": "slots.html"
+                }]
+            },
+            {
+                "action": "dns",
+                "title": "Networks",
+                "href": "network.html",
+                "items": [{
+                    "title": "All Networks",
+                    "href": "network.html"
+                }]
+            }
+        ]
+    }]
 }

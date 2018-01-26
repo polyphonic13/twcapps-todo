@@ -1,8 +1,8 @@
 import axios from "axios";
-import { FETCH_LABELS, GET_LABELS, SET_LABELS } from "../../types";
-import { API_URL, LABELS_PATH } from "../../constants";
+import { FETCH_LABELS, GET_LABELS, SET_LABELS } from "../../Types";
+import { API_URL, LABELS_PATH } from "../../Constants";
 
-import Label from "../../../models/label";
+import Label from "../../../models/Label";
 
 const url = API_URL + LABELS_PATH;
 
